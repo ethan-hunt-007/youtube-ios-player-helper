@@ -871,6 +871,10 @@ NSString static *const kYTPlayerSyndicationRegexPattern = @"^https://tpc.googles
   self.webView = nil;
 }
 
+- (void)dealloc {
+    self.webView.delegate = nil;
+}
+
 + (NSBundle *)frameworkBundle {
     static NSBundle* frameworkBundle = nil;
     static dispatch_once_t predicate;
